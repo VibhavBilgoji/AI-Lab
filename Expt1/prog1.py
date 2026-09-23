@@ -1,0 +1,17 @@
+val_int = int(input("Enter an integer: "))
+val_float = float(input("Enter a float number: "))
+val_complex = complex(input("Enter a complex number (e.g., 3+4j): "))
+val_bool = input("Enter a boolean value (True/False): ").strip().lower() == "true"
+val_str = input("Enter a string: ")
+val_list = input("Enter space-separated items for a list: ").split()
+val_tuple = tuple(input("Enter space-separated items for a tuple: ").split())
+val_set = set(input("Enter space-separated items for a set: ").split())
+
+print("Integer Value:", val_int, "| Type:", type(val_int))
+print("Float Value:", val_float, "| Type:", type(val_float))
+print("Complex Value:", val_complex, "| Type:", type(val_complex))
+print("Boolean Value:", val_bool, "| Type:", type(val_bool))
+print("String Value:", val_str, "| Type:", type(val_str))
+print("List Value:", val_list, "| Type:", type(val_list))
+print("Tuple Value:", val_tuple, "| Type:", type(val_tuple))
+print("Set Value:", val_set, "| Type:", type(val_set))

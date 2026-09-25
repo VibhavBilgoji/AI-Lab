@@ -59,10 +59,11 @@ def water_jug_dfs(m: int, n: int, d: int):
                 prev[(x, y, count+1)] = (jug1, jug2, count)
                 q.append((x, y, count+1))
 
+    return -1
 
 def construct_path(m: int, n: int, d: int):
     res = water_jug_dfs(m, n, d)
-    if res == None or res == -1:
+    if res == -1:
         return print("Scenario not possible")
 
     state, prev = res

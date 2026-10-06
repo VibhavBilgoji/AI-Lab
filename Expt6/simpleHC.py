@@ -26,12 +26,29 @@ def simpleHillClimbing(graph, heuristics, S):
 
 def main():
     graph = {
-        'S': ['A', 'B', 'C'], 'A': ['D'], 'B': ['E'], 'C': ['F'],
-        'D': ['E', 'G'], 'E': [], 'F': ['H'], 'H': ['G'], 'G': []
+        'S': ['A', 'B', 'C'],
+        'A': ['D', 'E'],
+        'B': ['F'],
+        'C': ['G', 'H'],
+        'D': ['I'],
+        'E': ['I', 'J'],
+        'F': ['J'],
+        'G': ['K'],
+        'H': ['K', 'L'],
+        'I': ['M'],
+        'J': ['M', 'N'],
+        'K': ['N'],
+        'L': ['N'],
+        'M': ['GOAL'],
+        'N': ['GOAL'],
+        'GOAL': []
     }
 
     heuristics = {
-        'S': 12, 'A': 8, 'B': 4, 'C': 9, 'D': 3, 'E': 1, 'F': 6, 'H': 2, 'G': 0
+        'S': 14, 'A': 10, 'B': 11, 'C': 9,
+        'D': 8, 'E': 9, 'F': 9, 'G': 7,
+        'H': 8, 'I': 7, 'J': 10, 'K': 4,
+        'L': 9, 'M': 9, 'N': 1, 'GOAL': 0
     }
 
     path = simpleHillClimbing(graph, heuristics, 'S')

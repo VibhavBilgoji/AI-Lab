@@ -1,0 +1,10 @@
+Enter initial x and y: 3 0
+Sequence of states:
+Step 0: state = (3.0, 0.0), value = -12.4199
+Step 1: state = (2.5, 0.0), value = -9.5341
+Step 2: state = (2.0, 0.0), value = -5.3292
+Step 3: state = (1.5, -0.5), value = -0.7534
+Step 4: state = (1.0, -1.0), value = 1.3354
+Step 5: state = (1.0, -0.5), value = 3.1683
+Step 6: state = (0.5, 0.0), value = 6.8957
+Step 7: state = (0.0, 0.0), value = 8.0000

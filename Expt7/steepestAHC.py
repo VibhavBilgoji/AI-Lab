@@ -12,23 +12,21 @@ def neighbors(state, step=0.5):
             for dy in (-step, 0, step)
             if (dx, dy) != (0, 0)]
 
-def simple_hill_climbing(objective, neighbors, start):
+def steepest_ascent(objective, neighbors, start):
     current, current_val = start, objective(start)
     path = [(current, current_val)]
     while True:
-        for n in neighbors(current):
-            n_val = objective(n)
-            if n_val > current_val:
-                current, current_val = n, n_val
-                path.append((current, current_val))
-                break
-        else:
+        best = max(neighbors(current), key=objective)
+        best_val = objective(best)
+        if best_val <= current_val:
             return path
+        current, current_val = best, best_val
+        path.append((current, current_val))
 
 
 x, y = [float(x) for x in input("Enter initial x and y: ").split()]
 start = (x, y)
-path = simple_hill_climbing(objective, neighbors, start)
+path = steepest_ascent(objective, neighbors, start)
 
 print("Sequence of states:")
 for i, (state, val) in enumerate(path):

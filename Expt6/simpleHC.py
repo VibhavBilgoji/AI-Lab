@@ -1,9 +1,11 @@
+import math
 import random
 
 
 def objective(state):
     x, y = state
-    return -(x - 3) ** 2 - (y + 1) ** 2
+    return -0.5 * (x ** 2 + y ** 2) + 8 * math.cos(x) * math.cos(y)
+    # return -(x - 3) ** 2 - (y + 1) ** 2
 
 def neighbors(state, step=1):
     x, y = state
@@ -30,4 +32,4 @@ path = simple_hill_climbing(objective, neighbors, start)
 
 print("Sequence of states:")
 for i, (state, val) in enumerate(path):
-    print(f"Step {i}: state = {state}, value = {val}")
+    print(f"Step {i}: state = {state}, value = {val:.4f}")
